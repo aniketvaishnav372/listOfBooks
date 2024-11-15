@@ -1,0 +1,14 @@
+{% extends "library/base.html" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p><strong>ISBN:</strong> {{ object.isbn }}</p>
+<p><strong>Published Date:</strong> {{ object.published_date }}</p>
+<p><strong>Available Copies:</strong> {{ object.available_copies }}</p>
+
+<a href="{% url 'book-list' %}" class="btn btn-secondary">Back to List</a>
+<a href="{{ object.id }}/edit/" class="btn btn-warning">Edit</a>
+<a href="{{ object.id }}/delete/" class="btn btn-danger">Delete</a>
+{% endblock %}
